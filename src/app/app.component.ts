@@ -1,14 +1,14 @@
-import { AfterViewInit, Component } from "@angular/core";
-import { Title } from "@angular/platform-browser";
-import { NavigationEnd, Router } from "@angular/router";
+import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = "NG Website Starter | ";
+  title = "Angular Web Site Template | ";
   // isLoading: boolean = true;
   showMenu: boolean = false;
   public constructor(private titleService: Title, private router: Router) {}
