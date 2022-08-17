@@ -1,0 +1,66 @@
+<header>
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-6 col-md-3 logo">
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          (click)="setTitle('Home')"
+          ><img src="assets/images/logo.svg"
+        /></a>
+      </div>
+      <div class="col-6 col-md-9 d-flex align-items-center justify-content-end">
+        <nav [ngClass]="{ show: showMenu }">
+          <div class="menu-control" (click)="showMenu = !showMenu">
+            <img class="lines" src="assets/images/lines.svg" />
+            <img class="close" src="assets/images/close.svg" />
+          </div>
+          <ul>
+            <li>
+              <a
+                routerLink="/home"
+                routerLinkActive="active"
+                (click)="setTitle('Home')"
+                >HOME</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/about-us"
+                routerLinkActive="active"
+                (click)="setTitle('Info')"
+                >INFO</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/contact"
+                routerLinkActive="active"
+                (click)="setTitle('Contact')"
+                class="btn btn-primary"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12">
+        <h5>A basic muti page website template built in Angular.</h5>
+      </div>
+    </div>
+    <div class="pt-5">
+      <small
+        ><span>© designSHIFT {{ currentDate | date: "yyyy" }}.</span>
+      </small>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,188 @@
+// See documentation (BS 4.4 current at setup) https://getbootstrap.com/docs/4.4/layout/grid/
+@import "~bootstrap/dist/css/bootstrap-grid.css";
+
+// Import PT SANS google font
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+
+// Colours
+$primary: #333; // logo blue
+$secondary: #666; // headings blue
+
+$mid-blue: #3eaad8;
+$light-blue: #e7f2f8;
+
+$light-grey: #ccc;
+$grey: #53575a;
+$dark-grey: #5a5d6b;
+
+$warn: #fb6a68;
+$red: #f3453c;
+
+$success: #2dd373;
+$green: #24b780;
+$orange: #fe9a4b;
+
+// convert Hex to RGB
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+  --light-grey: #{$light-grey};
+  --light-grey-rgb: #{hexToRGB($light-grey)};
+  --grey: #{$grey};
+  --grey-rgb: #{hexToRGB($grey)};
+  --dark-grey: #{$dark-grey};
+  --dark-grey-rgb: #{hexToRGB($dark-grey)};
+  --primary: #{$primary};
+  --primary-rgb: #{hexToRGB($primary)};
+  --secondary: #{$secondary};
+  --secondary-rgb: #{hexToRGB($secondary)};
+  --warn: #{$warn};
+  --warn-rgb: #{hexToRGB($warn)};
+  --success: #{$success};
+  --success-rgb: #{hexToRGB($success)};
+  --green: #{$green};
+  --green-rgb: #{hexToRGB($green)};
+  --orange: #{$orange};
+  --orange-rgb: #{hexToRGB($orange)};
+  --mid-blue: #{$mid-blue};
+  --mid-blue-rgb: #{hexToRGB($mid-blue)};
+  --light-blue: #{$light-blue};
+  --light-blue-rgb: #{hexToRGB($light-blue)};
+}
+
+.container {
+  box-sizing: border-box;
+}
+
+// Globel styles
+body {
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  color: var(--grey);
+  box-sizing: border-box;
+}
+a {
+  color: rgba(var(--grey-rgb), 0.8);
+  transition: all 0.3s;
+  text-decoration: none;
+  &:hover {
+    color: rgba(var(--grey-rgb), 1);
+  }
+}
+p a {
+  color: rgba(var(--secondary-rgb), 0.8);
+  &:hover {
+    color: rgba(var(--secondary-rgb), 1);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+// headings{
+h1 {
+  color: var(--secondary);
+  font-size: 44px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+h2 {
+  color: var(--secondary);
+  font-size: 28px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+h3 {
+  color: var(--secondary);
+  font-size: 18px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+h4 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+h5 {
+  color: var(--secondary);
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+// Buttons
+a,
+button {
+  &.btn {
+    display: inline-block;
+    min-width: 100px;
+    background: rgba(var(--light-grey-rgb), 0.8);
+    padding: 8px;
+    text-align: center;
+    border: none;
+    transition: all 0.3s;
+    border-radius: 3px;
+    font-weight: 700;
+    &:hover {
+      background: rgba(var(--light-grey-rgb), 1);
+    }
+  }
+  &.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    &:hover {
+      background: rgba(var(--mid-blue-rgb), 0.9);
+    }
+  }
+}
+
+// Page globals
+.hero {
+  background-color: rgba(var(--grey-rgb), 0.24);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  min-height: 150px;
+  position: relative;
+  @media (min-width: 768px) {
+    min-height: 300px;
+  }
+  &::before {
+    border: 8px solid var(--primary);
+    border-radius: 50%;
+    border-top: 8px solid var(--secondary);
+    width: 24px;
+    height: 24px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    content: "";
+    z-index: -1;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+.title {
+  background: var(--primary);
+  h1 {
+    color: #fff;
+  }
+}
