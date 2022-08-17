@@ -1,3 +1,15 @@
+# Angular Website Template Starter
+
+A basic multi page website starter template built in Angular.
+
+Using Bootstrap 5 for grid and responsive styling.
+
+You may want to enable the useHash in routing depending on where you deploy the site.
+
+View a <a href="https://designshift.com.au/angular-web-site" target="_blank">demo</a>
+
+# USING ANGULAR
+
 # AngularWebSite
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.

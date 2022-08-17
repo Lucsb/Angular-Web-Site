@@ -1,8 +1,8 @@
 // See documentation (BS 4.4 current at setup) https://getbootstrap.com/docs/4.4/layout/grid/
 @import "~bootstrap/dist/css/bootstrap-grid.css";
 
-// Import PT SANS google font
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+// Import Rubik google font
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&display=swap');
 
 // Colours
 $primary: #333; // logo blue
@@ -58,7 +58,7 @@ $orange: #fe9a4b;
 
 // Globel styles
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Rubik", sans-serif;
   margin: 0;
   color: var(--grey);
   box-sizing: border-box;
@@ -123,7 +123,7 @@ button {
     display: inline-block;
     min-width: 100px;
     background: rgba(var(--light-grey-rgb), 0.8);
-    padding: 8px;
+    padding: 8px 16px;
     text-align: center;
     border: none;
     transition: all 0.3s;
@@ -137,7 +137,7 @@ button {
     background: var(--primary);
     color: #fff;
     &:hover {
-      background: rgba(var(--mid-blue-rgb), 0.9);
+      background: rgba(var(--secondary-rgb), 0.9);
     }
   }
 }
