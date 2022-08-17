@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from "./home/home.component";
 import { InfoComponent } from "./info/info.component";
 import { ContactComponent } from "./contact/contact.component";
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, InfoComponent, ContactComponent],
@@ -14,7 +15,7 @@ import { ContactComponent } from "./contact/contact.component";
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
